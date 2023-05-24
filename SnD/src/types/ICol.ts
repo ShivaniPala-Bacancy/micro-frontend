@@ -1,0 +1,91 @@
+import yup from 'yup';
+import {ISuggestions, ISuggestionsFunction} from './ISuggestions';
+import ElementTypes from './ElementTypes';
+import InputTypes from './InputTypes';
+import {
+    IInputEventHandler,
+    IMouseEventHandler,
+    IFileEventHandler
+} from './EventHandlers';
+
+interface ICol {
+    name: string;
+    type: InputTypes;
+    key: string;
+    id: string;
+    id1?: string;
+    key1?: string;
+    onChange?: any | null;
+    onClick?: IMouseEventHandler;
+    onBlur?: IInputEventHandler | null;
+    onFileChange?: IFileEventHandler;
+    changeHandler?: (key: string, value: any) => void;
+    dataType?: string;
+    elementType?: ElementTypes;
+    siblingKey?: string;
+    parentKey?: string;
+    range?: string;
+    required?: boolean;
+    optional?: boolean;
+    pattern?: RegExp;
+    patternMismatchMessage?: string;
+    validationMessage?: string;
+    allowedFormats?: string[];
+    min?: number | null;
+    max?: number | null;
+    minDate?: string;
+    maxDate?: string;
+    minTime?: string;
+    maxTime?: string;
+    step?: number;
+    flag?: boolean;
+    checked?: boolean;
+    maxRecords?: number;
+    headerList?: string[];
+    schema?: yup.ObjectSchema<any, any>;
+    value?: any;
+    placeholder?: string;
+    hidden?: boolean;
+    disabled?: boolean;
+    autoComplete?: string;
+    multiple?: boolean;
+    autoFocus?: boolean;
+    options?: Array<ISuggestions> | ISuggestionsFunction;
+    suggestions?: Array<ISuggestions> | ISuggestionsFunction;
+    rows?: number;
+    cols?: number;
+    csvData?: any;
+    fileName?: string;
+    backAddOn?: boolean;
+    frontAddOn?: boolean;
+    addOnLabel?: string;
+    addOnAction?: any;
+    addOnIcon?: any;
+    addOnLabel2?: string;
+    addOnAction2?: any;
+    addOnIcon2?: any;
+    size?: number;
+    formGroupClass?: string;
+    labelClass?: string;
+    inputClass?: string;
+    noLabel?: boolean;
+    noError?: boolean;
+    labelSize?: number;
+    inputSize?: number;
+    errorSize?: number;
+    dataMapper?: (data?: any) => any;
+    allowedFormat?: Array<string>;
+    suggestionUrl?: string;
+    selectedSuggestion?: (() => ISuggestions) | ISuggestions;
+    addOneIcon?: boolean;
+    label1?: string;
+    label2?: string;
+    isChecked1?: boolean;
+    isChecked2?: boolean;
+    handleOnCheckbox1Change?: (data?: any) => any;
+    handleOnCheckbox2Change?: (data?: any) => any;
+    addQuestionData?: () => any;
+    showMonthYearPicker?: any;
+}
+
+export default ICol;

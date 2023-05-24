@@ -1,0 +1,222 @@
+.box {
+    --box-header-light-background-color: white;
+    --box-header-dark-background-color: #474745;
+    --box-header-dark-color: #b0ffff;
+    --box-header-light-color: rgb(153, 153, 153);
+    --box-title-color: rgb(30, 167, 253);
+}
+
+.box {
+    overflow: hidden;
+    background: white;
+    border-radius: 4px;
+    line-height: 1.5;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 5px 0px;
+}
+
+.box--loading {
+    pointer-events: none;
+}
+
+.box--minimized {
+    width: 120px;
+    transition: 0.5s ease-in-out;
+    max-height: 80px;
+}
+.box--minimized > div.box-body {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0px;
+    transition: 0.5s ease;
+}
+
+.box--maximized > div.box-body {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}
+
+/** large screens*/
+@media screen and (min-width: 500px) {
+    .box--half {
+        width: 50%;
+    }
+
+    .box--full {
+        width: 100%;
+    }
+    .box--quarter {
+        width: 24%;
+    }
+    .box--three-fourth {
+        width: 74%;
+        min-width: 590;
+    }
+}
+
+.box-header {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgb(0 0 0 / 10%) 0px -1px 0px 0px inset;
+}
+
+.box-header-dark {
+    background: var(--box-header-dark-background-color) !important;
+    color: var(--box-header-dark-color) !important;
+}
+.box-header-light {
+    background: var(--box-header-light-background-color);
+    color: var(--box-header-light-color) !important;
+}
+
+.box-footer {
+    padding-left: 10px;
+    height: 40px;
+    border-top: 1px solid rgb(209, 209, 209);
+    opacity: 0.6;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    font-weight: 600;
+    font-size: small;
+}
+
+.box-footer-content {
+    padding: 5px 10px;
+}
+
+.box-footer-left {
+    text-align: left;
+}
+
+.box-footer-center {
+    text-align: center;
+}
+
+.box-footer-right {
+    text-align: right;
+}
+
+.box-footer-dark {
+    background: #474745 !important;
+    color: #b0ffff !important;
+}
+.box-footer-light {
+    background: rgb(246, 246, 246);
+    color: black;
+}
+
+.box--minimized > div.box-footer {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0px;
+    transition: 0.5s ease;
+}
+
+.box-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.box--minimized > div.box-header > div.box-title > button {
+    padding: 0px 10px;
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.box-title > button {
+    white-space: normal;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    padding: 0px 15px;
+    transition: color 0.2s linear 0s, border-bottom-color 0.2s linear 0s;
+    height: 40px;
+    line-height: 12px;
+    cursor: pointer;
+    background: transparent;
+    border-style: none;
+    border-image: initial;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--box-title-color);
+}
+
+.divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.1);
+    float: left;
+    margin-top: -4px !important;
+    margin-right: 5px;
+}
+
+.box-tools {
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.box-tools > i > svg {
+    margin: 0px 3px;
+    float: left;
+}
+
+.box-tools > svg:hover {
+    transform: scale(1.2);
+}
+
+.box-tools > svg {
+    transition: all 0.2s ease-in-out;
+}
+
+.box-body {
+    min-height: 450px;
+    padding: 10px 20px;
+    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.content-center {
+    text-align: center;
+    padding: 10px;
+}
+
+.box-body--nopadding {
+    padding: 0 !important;
+    min-height: 10px !important;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.box-body {
+    scrollbar-width: auto;
+    scrollbar-color: #b1afaf #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+.box-body::-webkit-scrollbar {
+    width: 15px;
+}
+
+.box-body::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.box-body::-webkit-scrollbar-thumb {
+    background-color: #b1afaf;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}

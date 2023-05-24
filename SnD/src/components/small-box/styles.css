@@ -1,0 +1,15 @@
+.enMoney {
+    color: #cc1c39 !important;
+    font-weight: bold;
+}
+
+.enMoney::before {
+    content: ' \20B9';
+    font-weight: bold;
+}
+
+img {
+    height: 270px;
+    width: auto;
+    max-width: 500px;
+}

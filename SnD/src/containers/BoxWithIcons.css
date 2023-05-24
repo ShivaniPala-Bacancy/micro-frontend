@@ -1,0 +1,20 @@
+.btn-group .btn-text {
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+    display: block;
+    -webkit-transition: color 0.25s 1.5s, max-width 2s;
+    transition: color 0.25s 1.5s, max-width 2s;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(243, 250, 242);
+    background-color: rgba(15, 15, 48, 0.692);
+}
+
+.btn-group :hover .btn-text {
+    bottom: 20px;
+    right: 0;
+    position: absolute;
+    width: 100px;
+    opacity: 1;
+}

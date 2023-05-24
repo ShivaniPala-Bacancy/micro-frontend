@@ -1,0 +1,21 @@
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    left: '300px';
+    font-size: '500px';
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.h {
+    font-size: '500px';
+}

@@ -1,0 +1,24 @@
+.loader {
+    height: 2px;
+    width: 100%;
+    position: relative;
+}
+.loader:before {
+    display: block;
+    position: absolute;
+    content: '';
+    left: -200px;
+    width: 23%;
+    height: 2px;
+    background-color: darkred;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -200px;
+    }
+    to {
+        left: 100%;
+    }
+}
